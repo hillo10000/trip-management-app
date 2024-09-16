@@ -135,7 +135,7 @@
         </div>
         <div class="task">
             <input type="checkbox" id="task15-checkbox">
-            <label>KY（危険予知）（提出先：Dさんへメール　PDF　提出期限翌月20日）</label>
+            <label>KY（危険予知）（提出先：Dさんへメール　PDF　期限翌月1日）</label>
             <span id="task11-date"></span>
         </div>
     </div>
@@ -158,7 +158,7 @@
                 { id: 'task8-date', baseDate: returnDate, days: 3 },
                 { id: 'task9-date', baseDate: returnDate, days: 5 },
                 { id: 'task10-date', baseDate: new Date(tripDate.getFullYear(), tripDate.getMonth() + 1, 1), days: 0 },
-                { id: 'task11-date', baseDate: new Date(tripDate.getFullYear(), tripDate.getMonth() + 1, 20), days: 0 }
+                { id: 'task11-date', baseDate: new Date(tripDate.getFullYear(), tripDate.getMonth() + 1, 1), days: 0 }
             ];
 
             tasks.forEach(task => {
