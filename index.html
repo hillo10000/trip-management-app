@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-    <h1 class="title">出張管理アプリver1.0</h1>
+    <h1 class="title">出張管理アプリver1.03</h1>
     <div>
         <label for="customer-name">お客様名: </label>
         <input type="text" id="customer-name">
@@ -112,6 +112,12 @@
             <label>KY  危険と思われる場所を入力(客先初日)</label>
             <span id="task6.5-date"></span>
         </div>
+        <div class="task">
+            <input type="checkbox" id="task10.1-checkbox">
+            <label>V-factory接続確認(サービスに聞く)</label>
+            <span id="task6.6-date"></span>
+        </div>
+        
         <h2>◇帰着後</h2>
         <div class="task">
             <input type="checkbox" id="task11-checkbox">
@@ -130,13 +136,18 @@
         </div>
         <div class="task">
             <input type="checkbox" id="task14-checkbox">
-            <label>車両運航簿（提出先：Aさんへメール<br>PDF　手書スキャン　期限翌月１日）</label>
+            <label>車両運航簿（Aさんへメール,手書スキャンPDF<br>期限翌月１日）</label>
             <span id="task10-date"></span>
         </div>
         <div class="task">
             <input type="checkbox" id="task15-checkbox">
-            <label>KY（危険予知）（提出先：Dさんへメール　PDF　期限翌月1日）</label>
+            <label>KY（Dさんへ印刷orPDFメール,期限翌月1日）</label>
             <span id="task11-date"></span>
+        </div>
+        <div class="task">
+            <input type="checkbox" id="task16-checkbox">
+            <label>効率化-事前案内文-実施結果</label>
+            <span id="task12-date"></span>
         </div>
     </div>
     <button onclick="generatePDF()">PDF出力※iPhone 用紙サイズはリーガル 下の画像をピンチアウトで保存可</button>
@@ -158,7 +169,8 @@
                 { id: 'task8-date', baseDate: returnDate, days: 3 },
                 { id: 'task9-date', baseDate: returnDate, days: 5 },
                 { id: 'task10-date', baseDate: new Date(tripDate.getFullYear(), tripDate.getMonth() + 1, 1), days: 0 },
-                { id: 'task11-date', baseDate: new Date(tripDate.getFullYear(), tripDate.getMonth() + 1, 1), days: 0 }
+                { id: 'task11-date', baseDate: new Date(tripDate.getFullYear(), tripDate.getMonth() + 1, 1), days: 0 },
+                { id: 'task12-date', baseDate: returnDate, days: 3 },
             ];
 
             tasks.forEach(task => {
