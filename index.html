@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-    <h1 class="title">出張管理アプリ　ver1.03</h1>
+    <h1 class="title">出張管理アプリ　ver1.04</h1>
     <div>
         <label for="customer-name">お客様名: </label>
         <input type="text" id="customer-name">
@@ -63,17 +63,17 @@
         </div>
         <div class="task">
             <input type="checkbox" id="task2-checkbox">
-            <label>営業所の担当者に事前連絡（出張２週前）</label>
+            <label>営業所の担当者に1次or2次連絡（出張２週前）</label>
             <span id="task2-date"></span>
         </div>
         <div class="task">
             <input type="checkbox" id="task3-checkbox">
-            <label>BTOL出張申請（出張10日前）</label>
+            <label>BTOLユーザーは出張申請（出張10日前）</label>
             <span id="task3-date"></span>
         </div>
         <div class="task">
             <input type="checkbox" id="task4-checkbox">
-            <label>宿の取得　BTOL（出張10日前）</label>
+            <label>宿の取得　    BTOL等（出張10日前）</label>
             <span id="task4-date"></span>
         </div>
         <div class="task">
@@ -83,7 +83,7 @@
         </div>
         <div class="task">
             <input type="checkbox" id="task6-checkbox">
-            <label>超勤申請（出張１週前）</label>
+            <label>超勤申請（発生した当日）</label>
             <span id="task6-date"></span>
         </div>
         <h2>◇出張時</h2>
@@ -101,11 +101,11 @@
         </div>
         <div class="task">
             <input type="checkbox" id="task9-checkbox">
-            <label>出張報告書の作成（客先である程度まとめる）</label>
+            <label>出張報告書作成（出張先である程度まとめる）</label>
         </div>
         <div class="task">
             <input type="checkbox" id="task9.1-checkbox">
-            <label>出張精算の仮作成（客先である程度まとめる）</label>
+            <label>出張精算仮作成（出張先である程度まとめる）</label>
         </div>
         <div class="task">
             <input type="checkbox" id="task10-checkbox">
@@ -121,12 +121,12 @@
         <h2>◇帰着後</h2>
         <div class="task">
             <input type="checkbox" id="task11-checkbox">
-            <label>SALESFORCE実績入力（最終日から1日以内）</label>
+            <label>SALESFORCE実績入力（毎日入力を習慣化!!）</label>
             <span id="task7-date"></span>
         </div>
         <div class="task">
             <input type="checkbox" id="task12-checkbox">
-            <label>出張報告書の作成（帰着日から３日以内目安）</label>
+            <label>出張報告書作成（帰着日から３日以内目安）</label>
             <span id="task8-date"></span>
         </div>
         <div class="task">
@@ -136,7 +136,7 @@
         </div>
         <div class="task">
             <input type="checkbox" id="task14-checkbox">
-            <label>車両運航簿（Aさんへメール,手書スキャンPDF<br>期限翌月１日）</label>
+            <label>車両運航簿車に常備記入（Aさんへメール,手書スキャンPDF,期限翌月１日）</label>
             <span id="task10-date"></span>
         </div>
         <div class="task">
@@ -144,11 +144,7 @@
             <label>KY（Dさんへ印刷orPDFメール,期限翌月1日）</label>
             <span id="task11-date"></span>
         </div>
-        <div class="task">
-            <input type="checkbox" id="task16-checkbox">
-            <label>営業所担当者と2次連絡</label>
-            <span id="task12-date"></span>
-        </div>
+        
     </div>
     <button onclick="generatePDF()">PDF出力※iPhone 用紙サイズはリーガル 下の画像をピンチアウトで保存可</button>
     <script>
@@ -163,9 +159,7 @@
                 { id: 'task3-date', baseDate: tripDate, days: -10 },
                 { id: 'task4-date', baseDate: tripDate, days: -10 },
                 { id: 'task5-date', baseDate: tripDate, days: -7 },
-                { id: 'task6-date', baseDate: tripDate, days: -7 },
                 { id: 'task6.5-date', baseDate: tripDate, days:  0 },
-                { id: 'task7-date', baseDate: lastDayDate, days: 1 },
                 { id: 'task8-date', baseDate: returnDate, days: 3 },
                 { id: 'task9-date', baseDate: returnDate, days: 5 },
                 { id: 'task10-date', baseDate: new Date(tripDate.getFullYear(), tripDate.getMonth() + 1, 1), days: 0 },
@@ -283,4 +277,3 @@
     </script>
 </body>
 </html>
-
